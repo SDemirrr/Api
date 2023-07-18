@@ -60,5 +60,23 @@ public class Get01 {
                 .statusCode(200).contentType(ContentType.JSON)
                 .statusLine("HTTP/1.1 200 OK");
 
+        //Status Code nasil yazdirilir
+        System.out.println("Status Code : "+response.statusCode());
+
+        //Content Type nasil yazdirilir
+        System.out.println("Content Type : "+response.contentType());
+
+        //Status Line nasil yazdirilir
+        System.out.println("Status Line : "+response.statusLine());
+
+        //Header nasil yazdirilir
+        System.out.println("header : "+response.header("Connection"));
+
+        //Headers nasil yazdirilir
+        System.out.println("headers : "+response.headers());
+
+        //Time nasil yazdirilir
+        System.out.println("Time : "+response.getTime());
+
     }
 }
