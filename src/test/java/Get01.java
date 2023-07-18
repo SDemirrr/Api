@@ -1,3 +1,4 @@
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 
@@ -52,7 +53,12 @@ public class Get01 {
         //iii) Type code to send request
         Response response=given().when().get(url);
         response.prettyPrint();
+
         //iv) Do Assertion
+        response.then()
+                .assertThat()
+                .statusCode(200).contentType(ContentType.JSON)
+                .statusLine("HTTP/1.1 200 OK");
 
     }
 }
