@@ -1,6 +1,6 @@
 import org.junit.Test;
 
-public class Get02 {
+public class Get03 {
 
     //i)Set the URL
     //ii) Set the expected Data
@@ -8,7 +8,7 @@ public class Get02 {
     //iv) Do Assertion
 
     @Test
-    public void get02(){
-          
+    public void get03(){
+
     }
 }
