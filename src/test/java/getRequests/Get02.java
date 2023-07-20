@@ -1,6 +1,8 @@
+package getRequests;
+
 import org.junit.Test;
 
-public class Get04 {
+public class Get02 {
 
     //i)Set the URL
     //ii) Set the expected Data
@@ -8,7 +10,7 @@ public class Get04 {
     //iv) Do Assertion
 
     @Test
-    public void get04(){
-
+    public void get02(){
+          
     }
 }

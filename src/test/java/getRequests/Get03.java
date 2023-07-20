@@ -1,3 +1,5 @@
+package getRequests;
+
 import org.junit.Test;
 
 public class Get03 {
