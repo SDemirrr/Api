@@ -1,6 +1,7 @@
 package getRequests;
 
 import io.restassured.response.Response;
+import org.junit.Assert;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.*;
@@ -42,8 +43,16 @@ public class Get02 {
         response.then().assertThat().statusCode(404).statusLine("HTTP/1.1 404 Not Found");
 
         //Response body'de bulunan spesifik bir veri nasil assert edilir
+        // Bady Not Found iceriyormu testi yapılıyor.
+        assert response.asString().contains("Not Found");
+
+        // Bady'nin  TechProEd icermiyor mu testi yapılıyor.
+        Assert.assertFalse(response.asString().contains("TechProEd"));
+
+        //Server'in Cowboy olup olmadigini test ediyoryz.
+        Assert.assertEquals(response.header("Server"),"Cowboy");
 
 
-          
+
     }
 }
