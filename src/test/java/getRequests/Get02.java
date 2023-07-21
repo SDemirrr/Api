@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.*;
+import static org.testng.AssertJUnit.assertFalse;
 
 public class Get02 {
 
@@ -47,7 +48,7 @@ public class Get02 {
         assert response.asString().contains("Not Found");
 
         // Bady'nin  TechProEd icermiyor mu testi yapılıyor.
-        Assert.assertFalse(response.asString().contains("TechProEd"));
+        assertFalse(response.asString().contains("TechProEd"));
 
         //Server'in Cowboy olup olmadigini test ediyoryz.
         Assert.assertEquals(response.header("Server"),"Cowboy");
