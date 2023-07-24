@@ -1,0 +1,170 @@
+JAVADA KAC TANE VARIABLE (Data tipi degil) TYPE VARDIR?
+local variable: Methodun icinde tanimlanirlar. main methodun icinde tanimlananlar gibi. local variable olusturulunca ona mutlaka deger atmak zorundayiz. Eğer yapmazsak local variableyi kullanırken hata alırız.
+Constructor içinde tanımlananlara da local variable denir. Try Cach, Finally , static blok içinde oluşturulabilir
+Local variable oluşturulurken acces modifier kullanılmaz
+Java local variablere default değer vermez
+Local variableri static yapamayız
+​
+OBJECT VARIABLE
+OBJECT VARIABLE static olmamalı, clasın içinde methodların dışında olmalıdır
+değer ataması yapmak zorunda değiliz. Biz değer ataması yapmasak bile java default değerler atar.
+Object variablelerde acces modifier kullanırız.
+Obje var ler bir insanın gözü gibidir. Objeye air variableler için obje şarttır.
+Object variablelere ulaşmak için obje oluştrumak zorundayız.
+​
+STATIC VARIABLE (CLASS VARIABLE)
+bir variableyi static yapmak için “static” kelimesini kullanmak zorundayız. Statıc variablelere classa bağlıdır.
+Tüm objelerin ortak malıdır. Gökteki ay örneği
+static variable method ve constructorun veya herhangi bir blokun içinde oluşturulamaz. Bunların dışında clasın içinde oluşturulmalıdır.
+Değer ataması istersek yaparız atama yapmazsak java default değeler ataması yapar.
+Static var ulaşmak için obje oluşturmak zorunda değiliz clas ismiyle de ulaşabiliriz.
+Obje oluşturmadan ulaşabileceğimiz variableler için static variableler oluştururuz.
+Her obje memoryde yer kaplayacağı için mecbur kalmazsak obje oluşturmayız.
+ 
+SORU 2
+PRPIMITIVE VE NON PRIMITIVE DATA TİPLERİNİ AÇIKLA VE ARALARINDAKİ FARKI SÖYLEYİNİZ?
+NOT: Birbirine bezeyen konular arasındaki farkları mutlaka öğrenmeliyiz( String ve String Buffer veya String Builder arasındaki fark)
+Primitivelerin virgülsüz olan tipleri: Byte, Short, Long ,int
+4 Farklı data tipi oluşturmadan maksat memory korumaktır. Bize lazım olan data tipini kullanmaya çalışmalıyız.
+Virgüllü data tipleri: double, float
+Virgüllü sayılarda hassaiyeti arttırmak için iki tane oluşturulmuş. doublede virgülden sonra 16 basamak ; float virgülden sonra 6 basamak kullanmaya izin verir.
+Float kullanırken “f” harfini kullanmak zorunda olduğumuzda float kullanmak çook tercih edilmez.
+Java virgüllü sayıyı otomatik olarak double, virgülsüz sayıyı da int Kabul eder.
+char: Tek haneli datalardır. ‘a’ ‘!’ gibi.
+boolean: günlük hayattaki doğru yanlış sorularının cevabı gibidir. Cevabı evet hayır olan durumlarda kullanılır.
+​
+NON PRIMITIVE DATA TİPLER
+String: Birden fazla karakter içeren data tipleri String olabilir. Bir evin adresi gibi
+Arrayler non primitivedir
+Oluşturulan her bir class, interfaceler non primitive data tipleridir
+​
+PRİMİTİVE  ve NON PRIMITIVE ARASINDAKİ FARKLAR
+Primitiveleri java oluşturur non primitivelerin ise bazılarını java oluşturur bazılarını da kullanıcılar oluşturur
+Non primitiveler heap memeorye primitiveler ise stack memoryde depolanır.
+Bir primitivenin mutlaka değeri olmak zorundadır. Non primitivenin ise mutlaka bir başlangıç değeri olmak zorunda değildir.
+Kozmetik bir fark olarak primitivelerin ilk harfleri küçük harfle non primitivelerin ise iilk harfi büyük yazılır.
+Primitiveleri hafıada kapladığı yer data tipine göre değişir.
+Primitiveler içinde sadece değer vardır.non primitivelerin içinde değerlerin yanında methodlar da vardır. (BU FARK ÇOKKKKK ÖNEMLİ. BU FARK MUTLAKA SÖYLENMELİDİR)
+​
+​
+​
+PRİMİTİVE İLE NON-PRİMİTİVE'LER ARASİNDAKİ FARK NEDİR? (JAVA DERSLERİNDEN)
+​
+1) Non-Primitive data typeslerde degerin yanında methodlar vardir.
+Primitive data typeslerin içinde ise sadece deger vardir. Method yoktur.
+​
+2) Primitive data typesleri Java tarafindan olusturulmustur. Toplam 8 tanedir. biz Primitive data olusturamayız.
+non-primitive data typesler java tarafindan da olusturulmustur, biz de olusturabiliriz.
+non primitiveler sayilamayacak kadar coktur. cunku her devoloper non-primitive data olusturabilir.
+​
+3)Primitive data typesler isimleri isimlendirilirken kucuk harflerle baslar. (int, char, short, double)
+Non-Primitive data types isimleri buyuk harfle baslar. (String)
+​
+4)Primitive data typler memory'de farkli buyuklukte yerler kullanirlar.
+Non-Primitive datalarin hepsi memory'de ayni buyuklukte yer kullanilirlar.
+Insanlarin boylari fakli olsa da kalbi ve beyninin buyuklugu hemen hemen aynidir.
+5) nonpimitiveler siyah, primitiveler mavi renktedir
+​
+EQUALS VE == ARASINDAKİ FARK
+Ikı tane stringin aynı olduğunu control etmek için kullanılabilir.
+ Java Stringi heap memoriye koyar. Dolayısıyla bu stringi tekrar bulabilemek için adresini de stack hafızaya koyar.
+Stringi bulmasi gerektiginde once adrese bakar ve oradan yola cikarak stringi bulur. Burada iki sey vardir. String ve adresi == sembolunu kullanirsak java hem adresin hem de stringin ayni olup olmadigini control eder eger ikisinin de degeri ayniysa true return eder. Hafizada ayni stringten bir tane varsa java ikinci icin tekrar bir yer ayirmaz. Stringlerin yeri ayni ise adresleri de ayni olacagi icin tue aliriz
+Equals() ise sadece degere bakar adreslerle ilgilenmez. Eger degerler ayniysa true return eder.
+Biz kod yazarken sadece degerin ayni olmasina bakariz adres olusturmak ve buna gore degerleri bulmak javanin isidir.
+Iki tane stringi karsilastiriken cok buyuk biy olasilikla equals methodunu kullaniriz.
+Iki tane stringi karsilastiriken  == isaretini kullanmak acemilik gostergesidir.
+String olustururken “new” kelimesini kullanirsak java onu baska bir adrese koyar. Eger bu iki stringi karsilastirmak icin == kullanirsam false return eder.
+JAVA DERSLERINDEN
+1) javada iki turlu memory vardir.
+i)Stack Memory'dir (small dan aklimiza gelsin)
+a) Kucuk memorydir.
+b) Primitive data typesleri barindirir.
+c) primitive ve non-primitive'lerin adreslerini (Reference) barindirir.
+d)Primitiveler ilgili hersey Stack Memory'dedir.
+​
+ii) Heap Memory: (Huge'den aklimiza gelsin)
+a) Buyuk Memory'dir
+b) Non-primitiveleri icerir.
+​
+2) Java Heap Memorylere yerlestirilen her non-primitive data icin bir adres olusturur ve
+ bu adresi Stack Memory'e koyar.
+herhangi bir nedenle adres silinirse Java adresi olmayan Heap'teki non-primitive datayi otomatik siler.
+BU Memory'nin temizligini saglayan "Garbage Collector" vardir.
+non primitiveler Stack deki adreslerden bulunabilirler.
+​
+​
+ SİNGLETON CLAS NEDIR VE NASIL OLUSTURULUR
+Singleton tek demektir Singleton clasta her halukarda bir obje olusturulmasina musade eder. Singleton clasta ayni anda sadece bir obje olusuturulabilir. Bir clastan kontrolsuz sayida obje olusturmak hafizanin dolmasina ve hataya sebep olacagi icin hafizayi korumak icin ikinci obje olusturulmasinin onune gecmek gerekir
+Singleton clas olusturmak icin
+1.Constructorunun private olmasi gerekir
+Constructor olusturmak icin
+Acces modifier yazilir
+Clasin ismiyle ayni olanbir isim verilir
+Construnctor parantezi acilir
+Suslu parantez acilip kapatilir
+Constructorunun private yapilmasinin nedeni encupsulaction icindir. Yani disaridan obje olusuturulmasini engelemek icindir
+2.Clasin ismini data tipi olarak kullanan private variable olusturulur. Bu variable olusturulan objeyi icinde barindiran variable olmalidir.
+3.Bir tane public method olusturulur bu method bir tane objeyi olusturup disaridaki claslardan o objeye ulasmayi saglamalidir.
+Methodun icinde obje olusturma kodunu yazarken birden fazla obje olusturmasinin onune gecmelidir
+Singleton bir design patterndir (dizayn kalibi)
+Javada dizayn kalibi developerler tarafindan olusturulmus ve digerleri tarafindan da benimsenmistir. (Mimar ve amerikan mutfak ornegi)
+1 tane obje bize yetiyorsa clasimizi Singleton clas yapmaliyiz boylece memory az kullanmis oluruz.
+TESTER OLARAK Browser olustururken olusturdugumuz test methodlar testlerimizi farkli tarayicilarda test etmelidir. Eger bizim kodumuz ayni anda iki tarayicida calisamaz o yuzden bir tanesini tercih etmelidir. O yuzden tek bir browser objesi bize yetecektir. Browser olusturacagimiz clasi Singleton clas yapmaliyiz bu yuzden.
+Frameworklerde browser olusturan clasi Singleton yaparlar.
+SİNGLETON CLAS ORNEGI
+ 
+SINGLETON CLASS CHARGPT DEN
+Singleton tasarım deseni, genellikle aşağıdaki şekilde uygulanır:
+1.	Bir örneğin yalnızca bir kere oluşturulmasını sağlamak için sınıfın yapıcı metodunu özel (private) yapın, böylece dışarıdan yeni bir örnek oluşturulması engellenir.
+2.	Sınıf içerisinde kendisini (instance) saklayacak bir static değişken oluşturun.
+3.	Dışarıdan erişim sağlamak için bir static yöntem (genellikle "getInstance") oluşturun. Bu yöntem, eğer bir örnek oluşturulmamışsa bir örnek oluşturur ve varolan örneği döndürür.
+​
+​
+​
+FINAL KEYWORD, FINALLY BLOCK, FINALIZE NEDIR
+Final keyword variable method ve claslarda kullanilabilir
+Final variable olusturdugumuzda mutlaka deger atamasi yapmak zorundayiz. Java default deger atamasi yapmaz
+Final variableye verilen deger artik ondan sonra degistirilemez. Final variablelerin isimlerinin butun harfleri buyuk yazilir.
+Final method: methodun bodysi artik degistirilemez. Dolayisiyla override edilemezler.
+"final" methodlar override edilemezler cunku overriding de method bodysi degistirilir ancak final method
+   method bodysinin degistirilmesine musade etmez
+Final class: final classlar kisir claslardir. Child claslari olamaz. Yani extent edilemezler.
+Final bir keyworddur. O yuzden method veya block kelimelerini kullanmamaliyiz. 
+​
+FINALLY BLOCK:
+ try catch ile breaber kullanilir. Try mutlaka olmalidir. Finallyi sadece try ile kullanabilirz. Fonkskiyonu ise exception atilsa da atilmasa da calistirilmasini istiyorsak finally block icinde yazmaliyiz. (Arabanin kapisinin her durumda kapatilmasi gerektigi orneginde oldugu gibi.)
+Aplicationlar databaseler ile baglanti kurarak islem yaparlar. Datayi kullanmak icin mutlaka databaseye ulasmasi gerekir. (Atm uygulamalarinda password ornegi) databaselerin hemen hepsi clouddadir. Veri alisverisi yapabilmek icin yapilan baglanti suresince para odenecegi icin islem bittiginde hemen baglantisnin kesilmesi lazim bunun icin database ile baglantiyi kesme gibi kodlar fnally block icine yazilir.
+FINALIZE METHOD
+Finalize bir methoddur. Garbage collector bu datayi imha etmeden once bu method calistirilir. Kullanilmaz hale gelen data hafizadan silinmezse hafiza dolar. Bunun icin garbage collector surekli memory control eder. Kullanilmayan bir data gordugunde o datayi memoryden siler. (Evi durmadan derleyip toparlamaya calisan anne gibi)
+Garbage collector her kullanilmayan datayi cope atmaz. Once o datayi finalize eder ve o datayi cope atilacak hale getirir ve garbage collector o datayi imha eder. (Evde kullanimis ici bosaltilmis pet siseler gibi. Siseleri tek tek atmak yerine elimize aldigimiz bir poset copleri toplayip agzini baglamak gibi)
+Finalize method java control eder. Java bu konuda ona verecegimiz komutlari onemsemez.
+​
+​
+JAVA DERSLERINDEN
+FINAL METHOD NEDIR? (COK ONEMLI BIR KONU) INTERWIE SORUSU
+           Final keyword;
+1)Variableslerde kullanilablilir==> public final int age=12;
+A) Variablelerde kullanilabilir
+B) Methodlarda kullanilabilir
+C) Classlarda kullanilabilir
+  a) final variableslere bir kere deger verirseniz artik onu asla degistiremezsiniz (Final ingilizcede "son hal"demektir)
+    pi sayisi 3,14 olarak tanimlanmasi buna bir ornektir o yuzden final keyword kullanilmalidir
+  b) final variableslere mutlaka bir deger atamak zorundayiz. Java final variableslere Default deger atamaz
+2)Methodlarda kullanilabilir ==> public final int add(){return a+b;}
+   a)eger bir method final olarak olusturulmus ise Final methodlarin badileri {  } icindeki ifadeler asla degistirilemez
+  b)O yuzden overriding yapilamazlar.Cunku overridingde method bodysinin icini degistiriyorduk ancak final keywordu
+       kullanilarak hazirlanmis bir methodun bodysi degistirilemez.
+​
+3)Classlarda kullanilabilir.
+    BIR CLASSI FINAL YAPARSANIZ O CLASSI KISIRLASTIRMIS OLURSUNUZ
+       Bir class final ise o classa "extends" edilemez.Child class olusturamazsiniz
+       Ancak final classin kendisi child class olabilir
+​
+​
+INHERITANCE NEDIR?
+OOP cok onemlidir o yuzden mutlaka anlamaliyiz. 4 prensibi vardir
+Inheritance, polimorfizm, abstraction, encapsulation
+Inheritancede child ve parent claslar vardir
+Extent kelimesi kullanilarak parent clas yapilir. Parent clasa ortak variable ve methodlar konularak daha az method yazilmis olur boylecce tamir ve gelistirme daha kolay olur tekrardan kurtulmus oluruz ve claslarimizi daha kucuk claslar haline getirmis oluruz. Bu da claslarimizin daha hizli calismasini saglar.
+ORNEK: 
+4 cocugu olan bir babanin her br cocuguna ayri ayri yazlik almak yerine iyi bir planlamayla 4 cocugun yazlik kul...
