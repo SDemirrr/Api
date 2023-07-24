@@ -1,8 +1,14 @@
 package getRequests;
 
+import baseUrl.JsonPlaceHolderBaseUrl;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import org.junit.Test;
 
-public class Get04 {
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+
+public class Get04 extends JsonPlaceHolderBaseUrl {
         /*
     Given
         https://jsonplaceholder.typicode.com/todos
@@ -27,9 +33,18 @@ public class Get04 {
     @Test
     public void get04(){
         //i)Set the URL
+        spec.pathParams("first","todos");
         //ii) Set the expected Data
+        Response response=given().spec(spec).when().get("/{first}");
+        response.prettyPrint();
+
         //iii) Type code to send request
+
         //iv) Do Assertion
+        response.then().assertThat()
+                .contentType(ContentType.JSON)
+                .statusCode(200)
+                .body("title",equalTo("quis eius est sint explicabo"));
 
     }
 }
