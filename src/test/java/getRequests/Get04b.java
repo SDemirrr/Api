@@ -34,6 +34,7 @@ public class Get04b extends RestfulBaseUrl {
 
         // Do Assertion
         assertEquals(200,response.statusCode());
+
         assertTrue(response.asString().contains("bookingid"));
 
     }
