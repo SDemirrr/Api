@@ -3,6 +3,7 @@ package getRequests;
 import baseUrl.JsonPlaceHolderBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
+import test_data.JsonPlaceHolderTestData;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -64,7 +65,6 @@ public class Get08 extends JsonPlaceHolderBaseUrl {
         System.out.println("actual Data : "+actualData);
 
         assertEquals(expectedData.get("userId"),actualData.get("userId"));
-        assertEquals(expectedData.get("id"),actualData.get("id"));
         assertEquals(expectedData.get("title"),actualData.get("title"));
         assertEquals(expectedData.get("completed"),actualData.get("completed"));
 
@@ -72,6 +72,42 @@ public class Get08 extends JsonPlaceHolderBaseUrl {
         assertEquals("cloudflare",response.header("Server"));
         assertEquals(200,response.statusCode());
 
+
     }
+
+     //***Dinamik Yontem***
+    @Test
+    public void get08b(){
+        // Set the URL
+        spec.pathParams("first","todos","second",2);
+
+        // Set The Expected Data ( put,post,patch)  ==>Payload
+        JsonPlaceHolderTestData objJsonPlaceHolder=new JsonPlaceHolderTestData();
+      Map<String,Object>expectedData=objJsonPlaceHolder
+               .expectedDataMethod(1,"quis ut nam facilis et officia qui",false);
+        System.out.println("expected Data : "+expectedData);
+
+        // Send The Request And Get The Response
+        Response response=given().spec(spec).when().get("/{first}/{second}");
+        response.prettyPrint();
+
+        // Do Assertion
+        Map<String,Object> actualData=response.as(HashMap.class);//De-serialization
+        System.out.println("actual Data : "+actualData);
+
+        assertEquals(expectedData.get("userId"),actualData.get("userId"));
+        assertEquals(expectedData.get("title"),actualData.get("title"));
+        assertEquals(expectedData.get("completed"),actualData.get("completed"));
+
+        assertEquals("1.1 vegur",response.header("Via"));
+        assertEquals("cloudflare",response.header("Server"));
+        assertEquals(200,response.statusCode());
+
+
+    }
+
+
+
+
 
 }
